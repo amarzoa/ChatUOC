@@ -1,0 +1,13 @@
+{"intents": [
+        {"tag": "saludo",
+            "patterns": ["Hola", "Que tal", "Buenas"],
+            "responses": ["sadfsda", "gracias por preguntar", "Me alegro de saludarte"],
+            "context":[""]
+        },
+        {"tag": "thanks",
+            "patterns": ["Gracias", "Muchas", "Muy Agradecido"],
+            "responses": ["de nada", "a sus pies"],
+            "context":[""]
+        }
+    ]
+}
