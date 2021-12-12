@@ -2,35 +2,26 @@
 import nltk, json, random, pickle
 from nltk.stem import WordNetLemmatizer
 from tensorflow.python.keras.engine.sequential import Sequential
-lemmatizer = WordNetLemmatizer()
+
 import pickle
 import numpy as np
 from tensorflow.keras.models import load_model
 import tensorflow as tf
 import os
 
-
-
-#ruta=os.getcwd() + '\chatbot_model'
-
-#archivo=open(ruta)
-#ruta=path('\chatbot_model.h5')
-#ruta="C:\Users\Adrian\Desktop\python\TFG"
 model=load_model(os.getcwd() + '\chatbot_model')
-#model = load_model('C:\Users\Adrian\Desktop\python\TFG\chatbot_model.h5')
-
-
+lemmatizer = WordNetLemmatizer()
 intents = json.loads(open('intents.json').read())
 words = pickle.load(open('words.pkl','rb'))
 classes = pickle.load(open('classes.pkl','rb'))
 
-# preprocessamento input utente
+# preprocesamiento 
 def clean_up_sentence(sentence):
     sentence_words = nltk.word_tokenize(sentence)
     sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
     return sentence_words
 
-# creazione bag of words
+# bag of words
 def bow(sentence, words, show_details=True):
     sentence_words = clean_up_sentence(sentence)
     bag = [0]*len(words)
@@ -47,7 +38,7 @@ def calcula_pred(sentence, model):
     res = model.predict(np.array([p]))[0]
     ERROR_THRESHOLD = 0.25
     results = [[i,r] for i,r in enumerate(res) if r>ERROR_THRESHOLD]
-    # sort by strength of probability
+    # ordenado por probabilidad
     results.sort(key=lambda x: x[1], reverse=True)
     return_list = []
     for r in results:
