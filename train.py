@@ -1,6 +1,4 @@
 import nltk
-#nltk.download('punkt')
-#nltk.download('wordnet')
 from nltk.stem import WordNetLemmatizer
 
 import tensorflow as tf
@@ -86,11 +84,11 @@ sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
 # entrenar el modelo
-hist = model.fit(np.array(train_x), np.array(train_y), epochs=300, batch_size=5, verbose=1)
+trainRes = model.fit(np.array(train_x), np.array(train_y), epochs=300, batch_size=5, verbose=1)
 scores= model.evaluate(np.array(train_x), np.array(train_y))
 print("%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
 
 # guardar el modelo
-model.save('chatbot_model', hist)
+model.save('chatbot_model', trainRes)
 
 print("Modelo Creado y Entrenado")
