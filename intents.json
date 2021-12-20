@@ -1,13 +1,64 @@
-{"intents": [
-        {"tag": "saludo",
-            "patterns": ["Hola", "Que tal", "Buenas"],
-            "responses": ["sadfsda", "gracias por preguntar", "Me alegro de saludarte"],
-            "context":[""]
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "inputs": [
+                "Hi there",
+                "How are you",
+                "Is anyone there?",
+                "Hey",
+                "Hola",
+                "Hello",
+                "Good day"
+            ],
+            "responses": [
+                "Hi there, how can I help?"
+            ],
+            "context": [
+                ""
+            ]
         },
-        {"tag": "thanks",
-            "patterns": ["Gracias", "Muchas", "Muy Agradecido"],
-            "responses": ["de nada", "a sus pies"],
-            "context":[""]
+        {
+            "tag": "goodbye",
+            "inputs": [
+                "Bye",
+                "See you later",
+                "Goodbye",
+                "Nice chatting to you, bye",
+                "Till next time"
+            ],
+            "responses": [
+                "Bye! Have a nice day"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "thanks",
+            "inputs": [
+                "Thanks",
+                "Thank you",
+                "That's helpful",
+                "Awesome, thanks",
+                "Thanks for helping me"
+            ],
+            "responses": [
+                "Happy to help!"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "noanswer",
+            "inputs": [],
+            "responses": [
+                "Sorry, I can't understand you"
+            ],
+            "context": [
+                ""
+            ]
         }
     ]
 }

@@ -1,14 +1,18 @@
+#Librerías de procesamiento de Lenguaje Natural
 import nltk
 from nltk.stem import WordNetLemmatizer
-
+#Librería para la creación de Redes Neuronales
 import tensorflow as tf
-import json
-import pickle
-
-import numpy as np
 from tensorflow.keras import Sequential
 from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.optimizers import SGD
+#Librería para el manejo de archivos json
+import json
+#Librería para la utilización de objetos tipo pickle
+import pickle
+#Librería para el manejo de vectores y matrices multidimensionales
+import numpy as np
+
 
 lemmatizer = WordNetLemmatizer()
 words = []
@@ -19,13 +23,14 @@ data_file = open('intents.json').read()
 intents = json.loads(data_file)
 print(intents)
 
-# intents: Conversaciones Tipo
-# patterns: Posibles interacciones de respuesta
+
+# intents: Conversaciones Tipo (Intenciones del Usuario)
+# inputs: Posibles inputs de interacción del usuario (Inputs del Usuario)
 for intent in intents['intents']:
-    for pattern in intent['patterns']:
+    for input in intent['inputs']:
 
         # tokenizamos 
-        w = nltk.word_tokenize(pattern)
+        w = nltk.word_tokenize(input)
         words.extend(w)
         # agrego a la matriz de documentos
         documents.append((w, intent['tag']))
@@ -46,14 +51,14 @@ pickle.dump(classes, open('classes.pkl','wb'))
 training = []
 output_empty = [0] * len(classes)
 for doc in documents:
-    # bag de palabras
+    # bolsa de palabras para utilizar la técnica de Bag of Words (bow) 
     bag = []
     # lista de tokens
-    pattern_words = doc[0]
+    input_words = doc[0]
     # lematización del token
-    pattern_words = [lemmatizer.lemmatize(word.lower()) for word in pattern_words]
+    input_words = [lemmatizer.lemmatize(word.lower()) for word in input_words]
     for w in words:
-        bag.append(1) if w in pattern_words else bag.append(0)
+        bag.append(1) if w in input_words else bag.append(0)
 
     output_row = list(output_empty)
     output_row[classes.index(doc[1])] = 1
@@ -62,7 +67,7 @@ for doc in documents:
 
 training = np.array(training)
 
-# creación del set de entrenamiento y de test: X - patterns, Y - intents
+# creación del set de entrenamiento y de test: X - inputs, Y - intents
 train_x = list(training[:,0])
 train_y = list(training[:,1])
 
@@ -80,15 +85,18 @@ model.add(Dense(64, activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(len(train_y[0]), activation='softmax'))
 
+# Descenso de Gradiente (SGD) es un algoritmo de optimización muy utilizado en aprendizaje automático.
+# SGD es un método general de minimización para cualquier función.
+# Se carateriza por su uso extensivo en el campo de las redes neuronales. 
 sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
-# entrenar el modelo
+# Entrenar el modelo. epochs será el número de veces que se ejecutarán los algoritmos
 trainRes = model.fit(np.array(train_x), np.array(train_y), epochs=300, batch_size=5, verbose=1)
 scores= model.evaluate(np.array(train_x), np.array(train_y))
 print("%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
 
-# guardar el modelo
+# Guardamos el modelo para ser ejecutado.
 model.save('chatbot_model', trainRes)
 
 print("Modelo Creado y Entrenado")
