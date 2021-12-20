@@ -1,7 +1,7 @@
 {
     "intents": [
         {
-            "tag": "greeting",
+            "tag": "greeting asd",
             "inputs": [
                 "Hi there",
                 "How are you",

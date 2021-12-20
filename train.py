@@ -35,7 +35,7 @@ for intent in intents['intents']:
         # agrego a la matriz de documentos
         documents.append((w, intent['tag']))
 
-        # agrgo clases a la lista de clases
+        # agregamos clases a la lista de clases
         if intent['tag'] not in classes:
             classes.append(intent['tag'])
 
@@ -58,7 +58,10 @@ for doc in documents:
     # lematización del token
     input_words = [lemmatizer.lemmatize(word.lower()) for word in input_words]
     for w in words:
-        bag.append(1) if w in input_words else bag.append(0)
+        if w in input_words:
+            bag.append(1) 
+        else:
+             bag.append(0)
 
     output_row = list(output_empty)
     output_row[classes.index(doc[1])] = 1
@@ -92,7 +95,7 @@ sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
 # Entrenar el modelo. epochs será el número de veces que se ejecutarán los algoritmos
-trainRes = model.fit(np.array(train_x), np.array(train_y), epochs=300, batch_size=5, verbose=1)
+trainRes = model.fit(np.array(train_x), np.array(train_y), epochs=100, batch_size=5, verbose=1)
 scores= model.evaluate(np.array(train_x), np.array(train_y))
 print("%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
 

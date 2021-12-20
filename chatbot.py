@@ -28,8 +28,10 @@ def clean_up_sentence(sentence):
     sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
     return sentence_words
 
-# Técnica de Bag of Words (bow) 
-def bow(sentence, words):
+# Técnica de Bag of Words (BOW) 
+# Método que se utiliza en el procesado del lenguaje 
+# para representar documentos ignorando el orden de las palabras.
+def bag_of_words(sentence, words):
     sentence_words = clean_up_sentence(sentence)
     bag = [0]*len(words)
     for s in sentence_words:
@@ -38,8 +40,8 @@ def bow(sentence, words):
                 bag[i] = 1
     return(np.array(bag))
 
-def calcula_pred(sentence, model):
-    bag = bow(sentence, words)
+def calc_pred(sentence, model):
+    bag = bag_of_words(sentence, words)
     response = model.predict(np.array([bag]))[0]
     ERROR_THRESHOLD = 0.25
     results = [[i,r] for i,r in enumerate(response) if r>ERROR_THRESHOLD]
@@ -50,7 +52,7 @@ def calcula_pred(sentence, model):
         return_list.append({"intent": classes[r[0]], "probability": str(r[1])})
     return return_list
 
-def getResponse(ints, intents_json):
+def get_response(ints, intents_json):
     tag = ints[0]['intent']
     list_of_intents = intents_json['intents']
     for i in list_of_intents:
@@ -59,9 +61,9 @@ def getResponse(ints, intents_json):
             break
     return result
 
-def initBot(msg):
-    ints = calcula_pred(msg, model)
-    response = getResponse(ints, datosJson)
+def init_bot(msg):
+    ints = calc_pred(msg, model)
+    response = get_response(ints, datosJson)
     return response
 
 userInput = ''
@@ -69,5 +71,5 @@ print('Bienvenido al Chat UOC TFG, para salir escribe "Exit"')
 
 while userInput != 'Exit':
     userInput = str(input("USUARIO: "))
-    response = initBot(userInput)
+    response = init_bot(userInput)
     print('BOT UOC:' + response)
