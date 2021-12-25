@@ -6,7 +6,10 @@
                 "Hola",
                 "¿Cómo estas?",
                 "¿Como estas?",
+                "¿Que tal?",
                 "¿Qué tal?",
+                "¿Que tal estas?",
+                "¿Qué tal estás?",
                 "Buenas",
                 "Buenos dias",
                 "Buenos días"
@@ -29,7 +32,7 @@
                 "Hasta la próxima"
             ],
             "responses": [
-                "Adios, ha sido un placer conversar contigo."
+                "Adios, ha sido un placer conversar contigo. Recuerda escribir 'Exit' o 'Salir' para dejar la conversación."
             ],
             "context": [
                 ""

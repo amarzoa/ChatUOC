@@ -19,6 +19,7 @@ import os
 import time
 #Librería para el manejo de codificadores y decodificadores (utf-8)
 import codecs
+#Librería para la gestión de texto a voz
 import pyttsx3
 
 model=load_model(os.getcwd() + '\chatbot_model')
@@ -79,7 +80,8 @@ def init_bot(msg):
 # Inicializamos el sistema y lo preseentamos
 userInput = 'Inicializando...'
 engine = pyttsx3.init()
-#engine.setProperty('rate', 50) 
+engine.setProperty('rate', 155) 
+
 ia='ADR-IA'
 print('\n\n%s'%(userInput))
 engine.say(userInput)
