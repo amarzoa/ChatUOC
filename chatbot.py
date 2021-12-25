@@ -17,10 +17,13 @@ import  random
 import os
 #Librería para introducir delays 
 import time
+#Librería para el manejo de codificadores y decodificadores (utf-8)
+import codecs
 
 model=load_model(os.getcwd() + '\chatbot_model')
 lemmatizer = WordNetLemmatizer()
-datosJson = json.loads(open('intents.json').read())
+datosJson = json.loads(codecs.open('intents.json', 'r', 'utf-8').read())
+
 words = pickle.load(open('words.pkl','rb'))
 classes = pickle.load(open('classes.pkl','rb'))
 
@@ -87,7 +90,6 @@ time.sleep(1)
 while userInput != 'Exit':
     userInput = str(input("%s: "% (username)))
     response = init_bot(userInput)
-    # print("BOT UOC:", response[0])
-    # Añadimos la Probabilidad
-    # print("BOT UOC:", response[0]," -(Probabilidad)=" , response[1])
+    # print("%s: "%(ia, response[0])) --- Sin añadir probabilidad a la respuesta
+    # Añadimos la Probabilidad a la respuesta
     print("%s: %s -(Probabilidad)= %.2f%%" % (ia, response[0], float(response[1])*100))

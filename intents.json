@@ -5,7 +5,7 @@
             "inputs": [
                 "Hola",
                 "¿Cómo estas?",
-                "¿Que tal?",
+                "¿Qué tal?",
                 "Buenas",
                 "Buenos días"
             ],
@@ -43,23 +43,96 @@
             ],
             "responses": [
                 "Ha sido un placer, el mérito es de mi programador Adrián Marzoa",
-                "No hay porque agradecerlo, el mérito es de mi programador Adrián Marzoa"
+                "No hay porque agradecerlo, el mérito es de mi programador Adrián Marzoa",
+                "Estamos aqui para ayudar, el mérito es de mi programador Adrián Marzoa"
             ],
             "context": [
                 ""
             ]
         },
         {
-            "tag": "Saludos",
+            "tag": "Ser",
             "inputs": [
-                "Hola",
-                "¿Cómo estas?",
-                "¿Que tal?",
-                "Buenas",
-                "Buenos días"
+                "¿Quien eres?",
+                "Como te llamas",
+                "Cúal es tu nombre"
             ],
             "responses": [
-                "Hola, como ya sabrás, mi nombre es ADR IA"
+                "Soy un Chatbot, un software de Inteligencia Artificial, mi nombre es ADR IA"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "Chatbot",
+            "inputs": [
+                "Que es un Chatbot",
+                "Definición de un Chatbot"
+            ],
+            "responses": [
+                "Un Chatbot es un software de Inteligencia Artificial construido con el propósito de realizar una serie de tareas de manera independiente. Este software tiene la capacidad de comunicarse con las personas a través del lenguaje natural"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "TiposChatbot",
+            "inputs": [
+                "¿Qué tipos de Chatbot existen?",
+                "¿Qué clasificación de Chatbots hay?",
+                "Como clasificarías los Chatbots",
+                "Tipos de Chatbot",
+                "Clasificación de Chatbot"
+            ],
+            "responses": [
+                "Existen diversas clasificaciones de chatbots. En función de su modelo de recuperación de respuestas (generativos y basados en reglas o patrones). En función de su dominio (dominio abierto o cerrado). En cualquier caso se pueden hacer multiples clasificaciones por sus características. Quizás para clasificarlos y agruparlos deberíamos utilizar una IA ;p."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "ModeloGenerativo",
+            "inputs": [
+                "¿Qué es un Chatbot de modelo generativo?",
+                "Definición de modelo generativo",
+                "modelo generativo"
+            ],
+            "responses": [
+                "Un Chatbot de modelo generativo está basado en un modelo de aprendizaje para crear respuestas de forma dinámica y 'creativa' durante una conversación. La respuesta final es siempre una incógnita, pues no disponen de esquemas de pregunta/respuesta definidos. El problema de esto es que, en la generación de estas respuestas, podemos obtener respuesta gramaticalmente incorrectas, incoherentes o irrelevantes en su contenido. La construcción de Chatbots de este tipo es compleja y laboriosa."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "ModeloReglas",
+            "inputs": [
+                "¿Qué es un Chatbot basado en recuperación?",
+                "¿Qué es un Chatbot basado en reglas?",
+                "¿Qué es un Chatbot basado en patrones?",
+                "¿Definición de modelo basado en recuperación?",
+                "Definición de modelo basado en reglas?",
+                "Definición de modelo basado en patrones?",
+                "modelo basado en recuperación reglas o patrones"
+            ],
+            "responses": [
+                "Un Chatbot basado en recuperación o tambien llamado basodo en reglas o patrones, es un modelo en el que los datos de respuestas son almacenados de antemano, esto es, se construyen las posibles preguntas y respuesta a las mismas. De esta manera el Chatbot es mucho más predecible y confiable, pues el Chatbot no genera nuevas respuesta. Estas además no contendrán errores semánticos ni gramaticales. Este modelo de arquitectura es mucho más sencillo de construir."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "Chiste",
+            "inputs": [
+                "Cuantame un chiste",
+                "Puedes contarme un chiste"
+            ],
+            "responses": [
+                "Tres tomates caminan por la calle, papa tomate, mama tomate y bebe tomate. El bebe tomate se despista y papa tomate se enfada muchísimo. Vuelve atrás, le aplasta y dice... ketchup (Catch up)"
             ],
             "context": [
                 ""
