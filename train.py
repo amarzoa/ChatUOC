@@ -12,14 +12,16 @@ import json
 import pickle
 #Librería para el manejo de vectores y matrices multidimensionales
 import numpy as np
+#Librería para el manejo de codificadores y decodificadores (utf-8)
+import codecs
 
 
 lemmatizer = WordNetLemmatizer()
 words = []
 classes = []
 documents = []
-ignore_words = ['?', '!']
-data_file = open('intents.json').read()
+ignore_words = ['?','¿', '!', '¡']
+data_file = codecs.open('intents.json', 'r', 'utf-8').read()
 intents = json.loads(data_file)
 
 print(intents)
