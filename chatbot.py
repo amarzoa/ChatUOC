@@ -19,6 +19,7 @@ import os
 import time
 #Librería para el manejo de codificadores y decodificadores (utf-8)
 import codecs
+import pyttsx3
 
 model=load_model(os.getcwd() + '\chatbot_model')
 lemmatizer = WordNetLemmatizer()
@@ -75,21 +76,37 @@ def init_bot(msg):
     response.append(ints[0]['probability'])
     return response
 
-userInput = 'Inicialización'
-ia='ADR IA'
-print('\n\nInicializando....')
+# Inicializamos el sistema y lo preseentamos
+userInput = 'Inicializando...'
+engine = pyttsx3.init()
+#engine.setProperty('rate', 50) 
+ia='ADR-IA'
+print('\n\n%s'%(userInput))
+engine.say(userInput)
+engine.runAndWait()
 response = init_bot(userInput)
-print('\nBienvenido al Chat UOC TFG, con la inteligencia artificial %s, para salir escribe "Exit" o "Salir"'% (ia))
-time.sleep(1)
-print('\nIntroduce tu nombre para que podamos conversar')
-time.sleep(1)
-username = str(input("Nombre ->: ")).upper()
 
-print('\n%s: Hola %s, ¿En que te puedo ayudar?'% (ia, username))
+print('\nBienvenido al Chatbot del TFG de Adrián Marzoa. Comienza un excitante encuentro con la inteligencia artificial %s, para salir escribe "Exit" o "Salir"'% (ia))
+engine.say("Bienvenido al Chatbot del TFG de Adrián Marzoa. Comienza un excitante encuentro con la inteligencia artificial %s, para salir escribe, Exit, o, Salir " % (ia))
+engine.runAndWait()
 time.sleep(1)
-while userInput != 'Exit':
+
+print('\nIntroduce tu nombre para que podamos conversar')
+engine.say("Introduce tu nombre para que podamos conversar")
+engine.runAndWait()
+time.sleep(1)
+
+username = str(input("Nombre ->: ")).upper()
+print('\n%s: Hola %s, ¿En que te puedo ayudar?'% (ia, username))
+engine.say("Hola %s. ¿En que te puedo ayudar?"% (username))
+engine.runAndWait()
+time.sleep(1)
+
+while userInput != 'Exit'  and userInput != 'Salir':
     userInput = str(input("%s: "% (username)))
     response = init_bot(userInput)
     # print("%s: "%(ia, response[0])) --- Sin añadir probabilidad a la respuesta
     # Añadimos la Probabilidad a la respuesta
     print("%s: %s -(Probabilidad)= %.2f%%" % (ia, response[0], float(response[1])*100))
+    engine.say(response[0])
+    engine.runAndWait()

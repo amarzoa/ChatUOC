@@ -5,13 +5,15 @@
             "inputs": [
                 "Hola",
                 "¿Cómo estas?",
+                "¿Como estas?",
                 "¿Qué tal?",
                 "Buenas",
+                "Buenos dias",
                 "Buenos días"
             ],
             "responses": [
-                "Hola, como ya sabrás, mi nombre es ADR IA",
-                "Encantada de saludarte, como ya sabrás, mi nombre es ADR IA"
+                "Hola, hoy me encuentro estupendamente, como ya sabrás, mi nombre es ADR IA",
+                "Muy buenos días, yo estoy encantada de saludarte, como ya sabrás, mi nombre es ADR IA"
             ],
             "context": [
                 ""
@@ -272,6 +274,19 @@
                 "Lo siento, no he podido comprenderte",
                 "Disculpa, no soy capaz de procesar tu pregunta",
                 "¿Podrías explicarte mejor para poder responder a tu pregunta?"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "ExitSalir",
+            "inputs": [
+                "Exit",
+                "Salir"
+            ],
+            "responses": [
+                "Ha sido un auténtico placer hablar contigo. Ojala volvamos a conversar pronto."
             ],
             "context": [
                 ""

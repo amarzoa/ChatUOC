@@ -102,7 +102,7 @@ sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
 # Entrenamos el modelo. epochs será el número de veces que se ejecutarán los algoritmos
-trainRes = model.fit(np.array(train_x), np.array(train_y), epochs=100, batch_size=5, verbose=1)
+trainRes = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
 # Evaluamos el modelo.
 scores= model.evaluate(np.array(train_x), np.array(train_y))
 print("%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
