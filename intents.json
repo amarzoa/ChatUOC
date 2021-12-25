@@ -1,60 +1,80 @@
 {
     "intents": [
         {
-            "tag": "greeting asd",
+            "tag": "Saludos",
             "inputs": [
-                "Hi there",
-                "How are you",
-                "Is anyone there?",
-                "Hey",
                 "Hola",
-                "Hello",
-                "Good day"
+                "¿Cómo estas?",
+                "¿Que tal?",
+                "Buenas",
+                "Buenos días"
             ],
             "responses": [
-                "Hi there, how can I help?"
+                "Hola, como ya sabrás, mi nombre es ADR IA",
+                "Encantada de saludarte, como ya sabrás, mi nombre es ADR IA"
             ],
             "context": [
                 ""
             ]
         },
         {
-            "tag": "goodbye",
+            "tag": "Despedida",
             "inputs": [
-                "Bye",
-                "See you later",
-                "Goodbye",
-                "Nice chatting to you, bye",
-                "Till next time"
+                "Adios",
+                "Hasta pronto",
+                "Ciao",
+                "Un placer hablar contigo",
+                "Hasta la próxima"
             ],
             "responses": [
-                "Bye! Have a nice day"
+                "Adios, ha sido un placer conversar contigo."
             ],
             "context": [
                 ""
             ]
         },
         {
-            "tag": "thanks",
+            "tag": "Gracias",
             "inputs": [
-                "Thanks",
-                "Thank you",
-                "That's helpful",
-                "Awesome, thanks",
-                "Thanks for helping me"
+                "Gracias",
+                "Muchas gracias",
+                "Has sido de mucha ayuda",
+                "Gracias por ayudarme"
             ],
             "responses": [
-                "Happy to help!"
+                "Ha sido un placer, el mérito es de mi programador Adrián Marzoa",
+                "No hay porque agradecerlo, el mérito es de mi programador Adrián Marzoa"
             ],
             "context": [
                 ""
             ]
         },
         {
-            "tag": "noanswer",
-            "inputs": [],
+            "tag": "Saludos",
+            "inputs": [
+                "Hola",
+                "¿Cómo estas?",
+                "¿Que tal?",
+                "Buenas",
+                "Buenos días"
+            ],
             "responses": [
-                "Sorry, I can't understand you"
+                "Hola, como ya sabrás, mi nombre es ADR IA"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "SinRespuesta",
+            "inputs": [
+                " ",
+                "asdf gladsjfl asfasf asdgarfadsg adfaefafcaserfaacsef asdfafaafsef afcas acassa efa asscef sdfg  assdaf"
+            ],
+            "responses": [
+                "Lo siento, no he podido comprenderte",
+                "Disculpa, no soy capaz de procesar tu pregunta",
+                "¿Podrías explicarte mejor para poder responder a tu pregunta?"
             ],
             "context": [
                 ""
