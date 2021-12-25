@@ -126,6 +126,130 @@
             ]
         },
         {
+            "tag": "Dominio",
+            "inputs": [
+                "¿Qué es el dominio en un Chatbot?",
+                "¿Qué es un Chatbot de dominio abierto?",
+                "¿Qué es un Chatbot de dominio cerrado?",
+                "Diferencias entre un Chatbot de dominio abierto y dominio cerrado"
+            ],
+            "responses": [
+                "El dominio en un Chatbot hace referencia a la temática a la que el Chatbot pueda dar respuesta. Así nos encontramos Chatbots de dominio abierto, que están construidos de forma ilimitada en sus capacidades para ofrecer respuestas a temáticas diversas. O de dominio cerrado, que admiten un tema específico de conversación, están diseñados para dar respuesta en ese contexto específico y ese entorno de conocimiento."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "NLP",
+            "inputs": [
+                "¿Qué es el NLP?",
+                "¿Qué es el Natural Language Processing?",
+                "¿Qué es el procesamiento de lenguaje natural?"
+            ],
+            "responses": [
+                "El Natural Language Processing (NLP) o  Procesamiento de Lenguaje Natural es una rama de la Inteligencia Artificial, que engloba todos los procesos para que una máquina sea capaz de comprender e interpretar el lenguaje humano y sea capaz de generar una respuesta coherente al usuario estableciendo un dialogo. "
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "NLU",
+            "inputs": [
+                "¿Qué es el NLU?",
+                "¿Qué es el Natural Language Understanding?",
+                "¿Qué es comprensión del lenguaje natural?"
+            ],
+            "responses": [
+                "El Natural Language Understanding (NLU) es la tecnología de la Inteligencia Artificial, englobada en la NLP, cuya misión es la de comprender palabras o frases escritas o habladas, lo que damos en llamar, el mensaje del usuario. "
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "NLG",
+            "inputs": [
+                "¿Qué es el NLG?",
+                "¿Qué es el Natural Language Generation?",
+                "¿Qué es la generación de lenguaje natural?"
+            ],
+            "responses": [
+                "El Natural Language Generation (NLG) es la tecnología de la Inteligencia Artificial, englobada en la NLP, cuya misión es la de producir el mensaje que se le va a enviar al usuario."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "RedesNeuronales",
+            "inputs": [
+                "¿Qué son las Redes Neuronales Artificiales?",
+                "Definición de Redes Neuronales Artificiales"
+            ],
+            "responses": [
+                "Las redes neuronales artificiales son un modelo computacional basado en un conjunto de nodos interconectados donde cada nodo es responsable de un cálculo simple, estas redes simulan el funcionamiento de una red neuronal biológica. "
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "AprendizajeSupervisado",
+            "inputs": [
+                "¿Qué es el aprendizaje supervisado?",
+                "¿Qué es el aprendizaje no supervisado?",
+                "aprendizaje no supervisado",
+                "aprendizaje supervisado"
+            ],
+            "responses": [
+                "El aprendizaje supervisado es un tipo de aprendizaje máquina donde existe conocimiento de la salida que debemos obtener dado un patrón de entrada. En este tipo de aprendizaje, la máquina necesita conocer, durante el proceso de entrenamiento, si el resultado final es acertado, esto es, dispone de un “supervisor” que le informe de si la salida ha sido la esperada o no, o hasta qué punto ha sido adecuada. Se dice que la máquina aprende con el ejemplo. El aprendizaje NO supervisado en cambio, es un tipo de aprendizaje automático donde el sistema no dispone de conocimiento de la salida que debe obtener dado un patrón de entrada. En este tipo de aprendizaje, el modelo se ajusta a las observaciones. De esta forma es la propia máquina la que infiere el resultado en base a los datos proporcionados en el entrenamiento."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "MachineLearning",
+            "inputs": [
+                "¿Qué es el Machine Learning?",
+                "¿Qué es el aprendizaje máquina?"
+            ],
+            "responses": [
+                "El Machine Learning es una disciplina científica dentro de la Inteligencia Artificial. Se compone de un conjunto de métodos y técnicas utilizados para que las máquinas sean capaces de aprender sin la necesidad explicita de ser programadas."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "DeepLearning",
+            "inputs": [
+                "¿Qué es el Deep Learning?",
+                "¿Qué es el aprendizaje profundo?"
+            ],
+            "responses": [
+                "El Deep Learning es una disciplina de la Inteligencia Artificial englobada dentro del Machine Learning. Cuando se utilizan redes neuronales para el aprendizaje y estas son extremadamente complejas con multitud de capas ocultas (generalmente más de 10) estaremos trabajando con Deep Learning"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "NeuronaArtificial",
+            "inputs": [
+                "¿Cómo funciona una Neurona artificial?",
+                "neurona artificial"
+            ],
+            "responses": [
+                "La neurona artificial es cada uno de los nodos de los que está compuesto una red neuronal, esta dispone de una serie de conexiones de entrada, estos enlaces tienen asignados unos pesos,  en función de los valores de la señal de entrada y los pesos asociados a cada una de sus conexiones se realizará un sumatorio. Al valor alcanzado se le aplica una función de activación que lanzará una señal de salida y activará, a través de la conexión de salida, la o las neuronas adyacentes"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
             "tag": "Chiste",
             "inputs": [
                 "Cuantame un chiste",
