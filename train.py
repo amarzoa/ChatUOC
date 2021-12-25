@@ -21,6 +21,7 @@ documents = []
 ignore_words = ['?', '!']
 data_file = open('intents.json').read()
 intents = json.loads(data_file)
+
 print(intents)
 
 
@@ -78,14 +79,18 @@ train_y = list(training[:,1])
 model = Sequential()
 
 # creación de las capas con sus neuronas y las funciones de activación
+# la primera capa estará definida por input_dim en este caso es del tamaño input_shape
+# la primera capa oculta observamos que será de 128 neuronas y función de activación relu
 model.add(Dense(128, input_shape=(len(train_x[0]),), activation='relu'))
 # Establecemos el Dropout. Este metodo ayuda a reducir el overfitting 
 # ya que las neuronas cercanas suelen aprender patrones que se relacionan 
 # y estas relaciones pueden llegar a formar un patron muy especifico con los datos de entrenamiento
 # ver https://jmlr.org/papers/volume15/srivastava14a.old/srivastava14a.pdf
 model.add(Dropout(0.5))
+# la segunda capa oculta observamos que será de 64 neuronas y función de activación relu
 model.add(Dense(64, activation='relu'))
 model.add(Dropout(0.5))
+# la capa de salida observamos que tendrá el tamaño de len(train_y[0]) y función de activación softmax
 model.add(Dense(len(train_y[0]), activation='softmax'))
 
 # Descenso de Gradiente (SGD) es un algoritmo de optimización muy utilizado en aprendizaje automático.
@@ -94,8 +99,9 @@ model.add(Dense(len(train_y[0]), activation='softmax'))
 sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
-# Entrenar el modelo. epochs será el número de veces que se ejecutarán los algoritmos
+# Entrenamos el modelo. epochs será el número de veces que se ejecutarán los algoritmos
 trainRes = model.fit(np.array(train_x), np.array(train_y), epochs=100, batch_size=5, verbose=1)
+# Evaluamos el modelo.
 scores= model.evaluate(np.array(train_x), np.array(train_y))
 print("%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
 

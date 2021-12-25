@@ -15,6 +15,8 @@ import numpy as np
 import  random
 #Librería de funcionalidad dependientes del sistema operativo (paths y otras)
 import os
+#Librería para introducir delays 
+import time
 
 model=load_model(os.getcwd() + '\chatbot_model')
 lemmatizer = WordNetLemmatizer()
@@ -63,13 +65,29 @@ def get_response(ints, intents_json):
 
 def init_bot(msg):
     ints = calc_pred(msg, model)
-    response = get_response(ints, datosJson)
+    response = []
+    #response = get_response(ints, datosJson)
+    #Añadimos la probabilidad
+    response.append(get_response(ints, datosJson))
+    response.append(ints[0]['probability'])
     return response
 
-userInput = ''
-print('Bienvenido al Chat UOC TFG, para salir escribe "Exit"')
+userInput = 'Inicialización'
+ia='ADR IA'
+print('\n\nInicializando....')
+response = init_bot(userInput)
+print('\nBienvenido al Chat UOC TFG, con la inteligencia artificial %s, para salir escribe "Exit" o "Salir"'% (ia))
+time.sleep(1)
+print('\nIntroduce tu nombre para que podamos conversar')
+time.sleep(1)
+username = str(input("Nombre ->: ")).upper()
 
+print('\n%s: Hola %s, ¿En que te puedo ayudar?'% (ia, username))
+time.sleep(1)
 while userInput != 'Exit':
-    userInput = str(input("USUARIO: "))
+    userInput = str(input("%s: "% (username)))
     response = init_bot(userInput)
-    print('BOT UOC:' + response)
+    # print("BOT UOC:", response[0])
+    # Añadimos la Probabilidad
+    # print("BOT UOC:", response[0]," -(Probabilidad)=" , response[1])
+    print("%s: %s -(Probabilidad)= %.2f%%" % (ia, response[0], float(response[1])*100))
