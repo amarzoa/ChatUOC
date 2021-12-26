@@ -124,7 +124,7 @@
                 "modelo basado en recuperación reglas o patrones"
             ],
             "responses": [
-                "Un Chatbot basado en recuperación o tambien llamado basodo en reglas o patrones, es un modelo en el que los datos de respuestas son almacenados de antemano, esto es, se construyen las posibles preguntas y respuesta a las mismas. De esta manera el Chatbot es mucho más predecible y confiable, pues el Chatbot no genera nuevas respuesta. Estas además no contendrán errores semánticos ni gramaticales. Este modelo de arquitectura es mucho más sencillo de construir."
+                "Un Chatbot basado en recuperación o tambien llamado basado en reglas o patrones, es un modelo en el que los datos de respuestas son almacenados de antemano, esto es, se construyen las posibles preguntas y respuesta a las mismas. De esta manera el Chatbot es mucho más predecible y confiable, pues el Chatbot no genera nuevas respuesta. Estas además no contendrán errores semánticos ni gramaticales. Este modelo de arquitectura es mucho más sencillo de construir."
             ],
             "context": [
                 ""
@@ -249,6 +249,20 @@
             ],
             "responses": [
                 "La neurona artificial es cada uno de los nodos de los que está compuesto una red neuronal, esta dispone de una serie de conexiones de entrada, estos enlaces tienen asignados unos pesos,  en función de los valores de la señal de entrada y los pesos asociados a cada una de sus conexiones se realizará un sumatorio. Al valor alcanzado se le aplica una función de activación que lanzará una señal de salida y activará, a través de la conexión de salida, la o las neuronas adyacentes"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "ConstruccionChatbot",
+            "inputs": [
+                "¿Cómo está construido este Chatbot?",
+                "¿Que herramientas se han utilizado para construir este Chatbot?",
+                "¿lenguaje de programación se ha utilizado para este Chatbot?"
+            ],
+            "responses": [
+                "Este Chatbot ha sido construido en python. Para su construcción se ha utilizado una red neuronal con dos capas ocultas, la primera de 128 neuronas y la segunda de 64 con funciones de activación ReLU. Utiliza las librerías de Tensorflow y Keras y la NLTK para el procesado de lenguaje natural."
             ],
             "context": [
                 ""
