@@ -81,8 +81,8 @@ train_y = list(training[:,1])
 model = Sequential()
 
 # creación de las capas con sus neuronas y las funciones de activación
-# la primera capa estará definida por input_dim en este caso es del tamaño input_shape
-# la primera capa oculta observamos que será de 128 neuronas y función de activación relu
+# la primera capa, la capa de entrada estará definida por input_dim, se crea con la adicción de la primera capa del modelo
+# la capa oculta inicial que configuramos observamos que será de 128 neuronas y función de activación relu
 model.add(Dense(128, input_shape=(len(train_x[0]),), activation='relu'))
 # Establecemos el Dropout. Este metodo ayuda a reducir el overfitting 
 # ya que las neuronas cercanas suelen aprender patrones que se relacionan 
