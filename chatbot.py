@@ -1,4 +1,4 @@
-#Librerías de procesamiento de Lenguaje Natural
+#Librería de procesamiento de Lenguaje Natural
 import nltk
 from nltk.stem import WordNetLemmatizer
 #Librería para la creación de Redes Neuronales

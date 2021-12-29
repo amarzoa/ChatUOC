@@ -54,7 +54,7 @@ pickle.dump(classes, open('classes.pkl','wb'))
 training = []
 output_empty = [0] * len(classes)
 for doc in documents:
-    # bolsa de palabras para utilizar la técnica de Bag of Words (bow) 
+    # Vector de palabras para utilizar la técnica de Bag of Words (bow) 
     bag = []
     # lista de tokens
     input_words = doc[0]
