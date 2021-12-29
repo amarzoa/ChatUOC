@@ -2,8 +2,6 @@
 import nltk
 from nltk.stem import WordNetLemmatizer
 #Librería para la creación de Redes Neuronales
-import tensorflow as tf
-from tensorflow.python.keras.engine.sequential import Sequential
 from tensorflow.keras.models import load_model
 #Librería para el manejo de archivos json
 import json

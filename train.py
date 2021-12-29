@@ -1,8 +1,7 @@
-#Librerías de procesamiento de Lenguaje Natural
+#Librería de procesamiento de Lenguaje Natural
 import nltk
 from nltk.stem import WordNetLemmatizer
 #Librería para la creación de Redes Neuronales
-import tensorflow as tf
 from tensorflow.keras import Sequential
 from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.optimizers import SGD
@@ -21,11 +20,9 @@ words = []
 classes = []
 documents = []
 ignore_words = ['?','¿', '!', '¡']
-data_file = codecs.open('intents.json', 'r', 'utf-8').read()
-intents = json.loads(data_file)
 
-print(intents)
-
+# Cargamos el json (utilizamos codificación utf-8)
+intents = json.loads(codecs.open('intents.json', 'r', 'utf-8').read())
 
 # intents: Conversaciones Tipo (Intenciones del Usuario)
 # inputs: Posibles inputs de interacción del usuario (Inputs del Usuario)
