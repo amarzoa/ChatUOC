@@ -149,7 +149,7 @@
             "inputs": [
                 "¿Qué es el NLP?",
                 "¿Qué es el Natural Language Processing?",
-                "¿Qué es el procesamiento de lenguaje natural?"
+                "¿Qué es el `procesado de lenguaje natural`?"
             ],
             "responses": [
                 "El Natural Language Processing (NLP) o  Procesamiento de Lenguaje Natural es una rama de la Inteligencia Artificial, que engloba todos los procesos para que una máquina sea capaz de comprender e interpretar el lenguaje humano y sea capaz de generar una respuesta coherente al usuario estableciendo un dialogo. "
@@ -162,8 +162,7 @@
             "tag": "NLU",
             "inputs": [
                 "¿Qué es el NLU?",
-                "¿Qué es el Natural Language Understanding?",
-                "¿Qué es comprensión del lenguaje natural?"
+                "¿Qué es el Natural Language Understanding?"
             ],
             "responses": [
                 "El Natural Language Understanding (NLU) es la tecnología de la Inteligencia Artificial, englobada en la NLP, cuya misión es la de comprender palabras o frases escritas o habladas, lo que damos en llamar, el mensaje del usuario. "
@@ -176,8 +175,7 @@
             "tag": "NLG",
             "inputs": [
                 "¿Qué es el NLG?",
-                "¿Qué es el Natural Language Generation?",
-                "¿Qué es la generación de lenguaje natural?"
+                "¿Qué es el Natural Language Generation?"
             ],
             "responses": [
                 "El Natural Language Generation (NLG) es la tecnología de la Inteligencia Artificial, englobada en la NLP, cuya misión es la de producir el mensaje que se le va a enviar al usuario."
@@ -208,7 +206,7 @@
                 "aprendizaje supervisado"
             ],
             "responses": [
-                "El aprendizaje supervisado es un tipo de aprendizaje máquina donde existe conocimiento de la salida que debemos obtener dado un patrón de entrada. En este tipo de aprendizaje, la máquina necesita conocer, durante el proceso de entrenamiento, si el resultado final es acertado, esto es, dispone de un “supervisor” que le informe de si la salida ha sido la esperada o no, o hasta qué punto ha sido adecuada. Se dice que la máquina aprende con el ejemplo. El aprendizaje NO supervisado en cambio, es un tipo de aprendizaje automático donde el sistema no dispone de conocimiento de la salida que debe obtener dado un patrón de entrada. En este tipo de aprendizaje, el modelo se ajusta a las observaciones. De esta forma es la propia máquina la que infiere el resultado en base a los datos proporcionados en el entrenamiento."
+                "El aprendizaje supervisado es un tipo de aprendizaje máquina donde existe conocimiento de la salida que debemos obtener dado un patrón de entrada. En este tipo de aprendizaje, la máquina necesita conocer, durante el proceso de entrenamiento, si el resultado final es acertado, esto es, dispone de un “supervisor” que le informe de si la salida ha sido la esperada o no, o hasta qué punto ha sido adecuada. Se dice que la máquina aprende con el ejemplo."
             ],
             "context": [
                 ""
